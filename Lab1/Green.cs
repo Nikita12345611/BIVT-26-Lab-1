@@ -65,18 +65,22 @@ namespace Lab1
             bool answer = false;
 
             // code here
-            if (x == -1 && y == 0) { answer = true; }
-            if (x == 1 && y == 0) { answer = true; }
-            if (x == 0 && y == 1) { answer = true; }
-            double y1 = 0;
-            if (x >= 0) { y1 = 1 - x; }
-            else {  y1 = 1 + x; }
+            double a;
+            if (x < 0)
+            {
+                a = x + 1;
+            }
+            else
+            {
+                a = 1 - x;
+            }
+            if (y <= a && y >= 0)
+            {
+                answer = true;
 
-            // add if()
+            // end
 
-                // end
-
-                return answer;
+            return answer;
         }
 
         public bool Task7(int n)
@@ -98,26 +102,14 @@ namespace Lab1
             bool answer = false;
 
             // code here
-            int h1 = 960;
-            int h2 = 1560;
-            bool c = false;
-            bool a = true;
-            h1 -= Y;
-
-            while (X != 0) {
-                if (c == true) { h1 -= Y; }
-                if (c == false) { c = true; }
-                else { c = false; }
-                if (660 > (h2 - h1) && (h2-h1) > 540) { a = false; }
-                if (a == true) { h2 -= 60; }
-                X -= 1;
+            int a = (X + 1) / 2;
+            int b = a * Y;
+            if (X >= 7 && b >= 240 && b <= 360)
+            {
+                answer = true;
             }
-            if (660 > (h2 - h1) && (h2 - h1) > 540 && h2 == 420) { answer = true; }
-            else { answer = false; }
-
-            // arrays?
-
-                // end
+            
+            // end
 
                 return answer;
         }
